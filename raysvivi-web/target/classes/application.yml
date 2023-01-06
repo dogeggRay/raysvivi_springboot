@@ -1,0 +1,10 @@
+server:
+  port: 8998
+
+spring:
+  application:
+    name: raysvivi-web
+  cloud:
+    nacos:
+      server-addr: 47.122.19.56:8848
+

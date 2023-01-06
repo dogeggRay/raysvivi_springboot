@@ -1,0 +1,6 @@
+org\spider\service\BoxOfficeNAServ.class
+org\spider\constant\Constant.class
+org\spider\dao\BoxOfficeNADao.class
+org\spider\SpiderDoubanApplication.class
+org\spider\task\SpiderTaskShaco.class
+org\spider\service\ShacoFinderServ.class
