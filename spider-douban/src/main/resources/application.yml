@@ -36,3 +36,10 @@ spring:
 device:
   properties:
     taskSwitch: false
+
+aliyun:
+  oss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    accessKeyId: LTAI5tJqiBm1YrQ8GotYJUiC
+    accessKeySecret: hqt7C9nbpY9CeGW6RfMmiWVbjBQvdf
+    bucketName: persional-images
