@@ -4,9 +4,6 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-/**
- * @author TJW
- */
 @Data
 public class ResponseData<T> implements Serializable {
     /**

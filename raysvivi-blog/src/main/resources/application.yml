@@ -1,0 +1,34 @@
+server:
+  port: 8997
+
+spring:
+  application:
+    name: raysvivi-web
+  cloud:
+    nacos:
+      server-addr: 47.122.19.56:8848
+  datasource:
+    #配置hikari连接池
+    hikari:
+      minimum-idle: 4
+      maximum-pool-size: 16
+      connection-timeout: 10000
+      idle-timeout: 30000
+      connection-init-sql: set names utf8mb4
+    dynamic:
+      primary: readDB
+      datasource:
+        readDB:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://47.122.19.56:3306/raysvivi?characterEncoding=UTF-8&useSSL=false
+          username: root
+          password: Ray/1990
+        writeDB:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://47.122.19.56:3306/raysvivi?characterEncoding=UTF-8&useSSL=false
+          username: root
+          password: Ray/1990
+
+mybatis-plus:
+  executor-type: simple
+  mapper-location: mapper/*.xml

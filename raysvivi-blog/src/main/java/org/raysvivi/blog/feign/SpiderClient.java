@@ -1,4 +1,4 @@
-package org.spider.feign;
+package org.raysvivi.blog.feign;
 
 import org.spider.common.util.ResponseData;
 import org.springframework.cloud.openfeign.FeignClient;

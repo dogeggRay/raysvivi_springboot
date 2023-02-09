@@ -1,8 +1,7 @@
-package org.spider.controller;
+package org.raysvivi.blog.controller;
 
+import org.raysvivi.blog.feign.SpiderClient;
 import org.spider.common.util.ResponseData;
-import org.spider.common.util.ResponseUtil;
-import org.spider.feign.SpiderClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

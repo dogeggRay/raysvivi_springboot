@@ -14,6 +14,8 @@
         <module>raysvivi-DB</module>
         <module>raysvivi-web</module>
         <module>raysvivi-model</module>
+        <module>raysvivi-test</module>
+        <module>raysvivi-blog</module>
     </modules>
 
     <properties>
