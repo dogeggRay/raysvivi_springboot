@@ -4,6 +4,7 @@ import org.raysvivi.blog.model.AritcleInfo;
 import org.raysvivi.blog.service.ArticleService;
 import org.spider.common.util.ResponseData;
 import org.spider.common.util.ResponseUtil;
+import org.spider.model.page.PageParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,9 +17,9 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
-    @PostMapping("/getArtcleList")
-    public ResponseData<?> getBoList(){
-        return ResponseUtil.ok("getArtcleList");
+    @PostMapping("/getArtclePageList")
+    public ResponseData<?> getArtclePageList(@RequestBody PageParam pageParam){
+        return ResponseUtil.ok(articleService.getBlogsWithPage(pageParam));
     }
 
     @PostMapping("/saveArtcle")

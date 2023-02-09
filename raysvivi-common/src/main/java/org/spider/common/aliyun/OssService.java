@@ -57,7 +57,10 @@ public class OssService{
         }finally{
             log.error("upload file failed");
             // 关闭OSSClient。
-            ossClient.shutdown();
+            if(ossClient!=null){
+                ossClient.shutdown();
+            }
+
         }
     }
 }

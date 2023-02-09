@@ -10,6 +10,8 @@
         <result property="title" column="f_title"/>
         <result property="content" column="f_content"/>
         <result property="module" column="f_module"/>
+        <result property="image" column="f_image"/>
+        <result property="abstractInfo" column="f_abstract"/>
         <result property="tag" column="f_tag"/>
         <result property="viewNum" column="f_view_num"/>
         <result property="createTime" column="create_time"/>
@@ -17,8 +19,8 @@
         <result property="deleteFlag" column="delete_flag"/>
     </resultMap>
 
-    <select id="getArticleList"  resultMap="articleInfoMap">
-        select id,f_title,f_content,f_module,f_tag,f_view_num,create_time,update_time,delete_flag
+    <select id="getArticlePageList"  resultMap="articleInfoMap">
+        select id,f_title,f_content,f_abstract,f_image,f_module,f_tag,f_view_num,create_time,update_time,delete_flag
         from  t_article
         where 1=1
         <if test="pageParam!=null">

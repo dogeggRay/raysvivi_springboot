@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Data
@@ -13,10 +14,10 @@ public class BaseDbEntity {
     private String id;
 
     @TableField(value = "create_time")
-    private Timestamp createTime;
+    private String createTime;
 
     @TableField(value = "update_time")
-    private Timestamp updateTime;
+    private String updateTime;
 
     @TableField(value = "delete_flag")
     private int deleteFlag;

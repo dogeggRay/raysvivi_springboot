@@ -17,6 +17,9 @@ public class AritcleInfo extends BaseDbEntity implements Serializable, Comparabl
     @TableField(value = "f_content")
     private String content;
 
+    @TableField(value = "f_abstract")
+    private String abstractInfo;
+
     @TableField(value = "f_module")
     private String module;
 
