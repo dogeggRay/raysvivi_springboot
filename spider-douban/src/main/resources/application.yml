@@ -1,5 +1,5 @@
 server:
-  port: 8999
+  port: 42102
 
 mybatis-plus:
   executor-type: simple

@@ -1,12 +1,9 @@
 server:
-  port: 8997
+  port: 42102
 
 spring:
   application:
-    name: raysvivi-web
-  cloud:
-    nacos:
-      server-addr: 47.122.19.56:8848
+    name: raysvivi-blog
   datasource:
     #配置hikari连接池
     hikari:

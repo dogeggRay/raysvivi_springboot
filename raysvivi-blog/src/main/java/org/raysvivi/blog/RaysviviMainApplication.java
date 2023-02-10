@@ -9,8 +9,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication()
-@EnableDiscoveryClient
-@EnableFeignClients
 @ComponentScan(basePackages = {"org.spider.common","org.raysvivi.blog"})
 public class RaysviviMainApplication {
     public static void main(String[] args) {
