@@ -30,7 +30,7 @@ public class OssService{
         this.bucketName = this.ossProperties.getBucketName();
     }
 
-    public String uploadImage(MultipartFile file) throws Exception {
+    public String uploadImage(MultipartFile file,String fileDir) throws Exception {
         OSS ossClient = null;
         log.info("start uploading image");
         try {
@@ -38,7 +38,7 @@ public class OssService{
             ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
             InputStream inputStream = file.getInputStream();
             // 依次填写Bucket名称（例如examplebucket）和Object完整路径（例如exampledir/exampleobject.txt）。Object完整路径中不能包含Bucket名称。
-            String fileName = bucketName+ "/" + DateTimeUtil.getCurrentDate()
+            String fileName = fileDir+"/"+DateTimeUtil.getCurrentDate()+"/"
                     + UUID.randomUUID().toString().replace("-", "")
                     + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
             // 参数1：保存文件的oss中的桶名； 参数2：保存上传的文件在桶内的路径和文件名； 参数3：上传的文件流

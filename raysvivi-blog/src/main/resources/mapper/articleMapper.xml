@@ -20,9 +20,10 @@
     </resultMap>
 
     <select id="getArticlePageList"  resultMap="articleInfoMap">
-        select id,f_title,f_content,f_abstract,f_image,f_module,f_tag,f_view_num,create_time,update_time,delete_flag
+        select id,f_title,f_abstract,f_image,f_module,f_tag,f_view_num,create_time,update_time,delete_flag
         from  t_article
         where 1=1
+        order by create_time desc
         <if test="pageParam!=null">
             limit ${pageParam.startIndex},${pageParam.pageSize}
         </if>

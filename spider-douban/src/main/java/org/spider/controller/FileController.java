@@ -16,7 +16,7 @@ public class FileController {
 
     @PostMapping("/uploadFile")
     public ResponseData<?> uploadFile(@RequestBody MultipartFile file) throws Exception {
-        String path = ossService.uploadImage(file);
+        String path = ossService.uploadImage(file,"spider");
         return ResponseUtil.ok(path);
     }
 }

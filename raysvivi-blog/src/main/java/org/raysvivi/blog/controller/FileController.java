@@ -20,8 +20,7 @@ public class FileController {
     @PostMapping("/uploadFile")
     public ResponseData<?> uploadFile(@RequestBody MultipartFile file) throws Exception {
         //无法autowired
-        String path = ossService.uploadImage(file);
+        String path = ossService.uploadImage(file,"myblog");
         return ResponseUtil.ok(path);
-        //return ResponseUtil.ok("https://persional-images.oss-cn-hangzhou.aliyuncs.com/headPortrait/2023-02-08601b9905b9f149f79b97938b49a628a8.webp");
     }
 }
