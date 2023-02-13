@@ -20,6 +20,7 @@ public class ArticleService {
     }
 
     public List<AritcleInfo> getBlogsWithPage(PageParam pageParam){
+        log.info("getBlogsWithPage access");
         return articleMapper.getArticlePageList(pageParam,null);
     }
 

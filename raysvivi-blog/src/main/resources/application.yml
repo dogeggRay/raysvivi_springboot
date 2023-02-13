@@ -1,9 +1,14 @@
 server:
-  port: 42102
+  port: 8997
 
 spring:
   application:
     name: raysvivi-blog
+  ssl:
+    key-alias: tomcat
+    key-store-password: llvbmcn9    #填写pfx-password.txt文件内的密码。
+    key-store-type: PKCS12
+    key-store: classpath:8931588_www.raysvivi.com.pfx    #您需要使用实际的证书名称替换domain_name.pfx。
   datasource:
     #配置hikari连接池
     hikari:
