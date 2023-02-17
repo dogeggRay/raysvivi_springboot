@@ -1,6 +1,8 @@
 package org.spider.common.util;
 
 
+import org.spider.common.exception.IException;
+
 /**
  * 请求结果组装工具类
  *
@@ -92,6 +94,19 @@ public class ResponseUtil {
         ResponseData<?> responseData = new ResponseData<>();
         responseData.setCode(FAILED_CODE);
         responseData.setMsg(ex.getMessage());
+        return responseData;
+    }
+
+    /**
+     * 失败
+     *
+     * @param ex IException
+     * @return ResponseData
+     */
+    public static ResponseData<?> error(IException ex) {
+        ResponseData<?> responseData = new ResponseData<>();
+        responseData.setCode(ex.getCode());
+        responseData.setMsg(ex.getMsg());
         return responseData;
     }
 

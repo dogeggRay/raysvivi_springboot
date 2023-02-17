@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/article")
+@RequestMapping("api/tourist/article")
 public class ArticleController {
 
     @Autowired
@@ -29,4 +29,5 @@ public class ArticleController {
     public ResponseData<?> blogDetail(@RequestBody AritcleInfo blogInfo) {
         return ResponseUtil.ok(articleService.getBlogDetail(blogInfo));
     }
+
 }
