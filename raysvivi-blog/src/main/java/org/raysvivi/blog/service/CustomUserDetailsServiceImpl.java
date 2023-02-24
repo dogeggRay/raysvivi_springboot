@@ -2,7 +2,6 @@ package org.raysvivi.blog.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.raysvivi.blog.dao.UserInfoMapper;
 import org.raysvivi.blog.model.user.UserSecurityInfo;
 import org.spider.model.user.UserInfo;

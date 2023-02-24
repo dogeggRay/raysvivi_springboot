@@ -21,6 +21,10 @@ public class UserInfo extends BaseDbEntity implements Serializable {
     @TableField(value = "remark")
     private String remark;
 
+
+    @TableField(value = "update_time")
+    private String updateTime;
+
     @TableField(value = "image")
     private String image;
 }

@@ -24,14 +24,17 @@ public class AritcleInfo extends BaseDbEntity implements Serializable, Comparabl
     @TableField(value = "f_module")
     private String module;
 
-    @TableField(value = "f_tag")
-    private String tag;
+    @TableField(value = "f_tags")
+    private String tags;
 
     @TableField(value = "f_image")
     private String image;
 
     @TableField(value = "f_view_num")
     private int viewNum;
+
+    @TableField(value = "update_time")
+    private String updateTime;
 
     @Override
     public int compareTo(AritcleInfo o) {

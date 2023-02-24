@@ -24,6 +24,10 @@ public class JwtUtil {
     private final String secret = "Raysvivi@ld";
     private final Map<String, String> tokenMap = new HashMap<>();
 
+    JwtUtil() {
+        //TODO 将token存入redis,服务启动时从redis读取
+//        tokenMap.put("1_admin", tmpToken);
+    }
     /**
      * 根据用户信息生成token、有效期(秒)
      *

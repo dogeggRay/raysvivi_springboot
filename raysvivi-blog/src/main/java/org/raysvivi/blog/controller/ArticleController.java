@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/tourist/article")
+@RequestMapping("/api/tourist/article")
 public class ArticleController {
 
     @Autowired
@@ -17,12 +17,6 @@ public class ArticleController {
     @PostMapping("/getArtclePageList")
     public ResponseData<?> getArtclePageList(@RequestBody PageParam pageParam){
         return ResponseUtil.ok(articleService.getBlogsWithPage(pageParam));
-    }
-
-    @PostMapping("/saveArtcle")
-    public ResponseData<?> saveArtcle(@RequestBody AritcleInfo aritcleInfo) {
-        articleService.save(aritcleInfo);
-        return ResponseUtil.ok();
     }
 
     @PostMapping("/blogDetail")

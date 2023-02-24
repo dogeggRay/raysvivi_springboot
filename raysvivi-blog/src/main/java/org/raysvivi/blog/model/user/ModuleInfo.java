@@ -1,18 +1,21 @@
-package org.spider.model;
+package org.raysvivi.blog.model.user;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-public class BaseDbEntity {
+@TableName("t_module")
+public class ModuleInfo {
+
     @TableId(value = "id", type = IdType.ASSIGN_UUID)
     private String id;
 
-    @TableField(value = "create_time")
-    private String createTime;
+    @TableField(value = "f_name")
+    private String name;
 
-    @TableField(value = "delete_flag")
-    private int deleteFlag;
+    @TableField(value = "f_value")
+    private String value;
 }
