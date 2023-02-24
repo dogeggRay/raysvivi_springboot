@@ -18,6 +18,7 @@ public class AdminLoginController {
 
     @Autowired
     private AdminService adminService;
+
     @PostMapping("/login")
     public ResponseData<?> login(@RequestBody LoginParam param, HttpServletRequest request){
         return adminService.checkLogin(param);
