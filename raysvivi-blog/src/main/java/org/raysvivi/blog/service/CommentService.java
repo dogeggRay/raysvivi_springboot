@@ -25,7 +25,9 @@ public class CommentService {
         commentMapper.insert(commentInfo);
     }
 
-    public void delete(String id){
+    public void delete(String id,String relativeIdString, String moduleId){
+        //TODO 待写逻辑
+        //List<CommentInfo>
         commentMapper.updateStatus(id);
     }
     public List<CommentInfo> getList(String moduleId,String relativeId){
@@ -33,6 +35,7 @@ public class CommentService {
         QueryWrapper queryWrapper = new QueryWrapper();
         queryWrapper.eq("f_module_id",moduleId);
         queryWrapper.eq("delete_flag", Constant.Common.EFFECTIVE);
+        queryWrapper.orderByDesc("create_time");
         if(StringUtils.isNotEmpty(relativeId)){
             queryWrapper.eq("f_relative_id",relativeId);
         }

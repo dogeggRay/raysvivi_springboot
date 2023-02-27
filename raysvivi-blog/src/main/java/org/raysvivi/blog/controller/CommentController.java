@@ -25,9 +25,4 @@ public class CommentController {
         return ResponseUtil.ok();
     }
 
-    @GetMapping("/delete")
-    public ResponseData<?> delete(@RequestParam String id){
-        commentService.delete(id);
-        return ResponseUtil.ok();
-    }
 }

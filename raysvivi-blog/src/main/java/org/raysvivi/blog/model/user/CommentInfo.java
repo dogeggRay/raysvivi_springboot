@@ -27,6 +27,8 @@ public class CommentInfo extends BaseDbEntity {
     @TableField(value = "f_writer_email")
     private String writerEmail;
 
+    @TableField(value = "f_writer_url")
+    private String writerUrl;
     @TableField(value = "f_content")
     private String content;
 

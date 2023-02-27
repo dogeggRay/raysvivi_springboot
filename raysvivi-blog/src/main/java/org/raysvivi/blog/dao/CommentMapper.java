@@ -10,7 +10,7 @@ import org.raysvivi.blog.model.user.CommentInfo;
 @DS(value = "readDB")
 @Mapper
 public interface CommentMapper extends BaseMapper<CommentInfo> {
-    @Update("<script>UPDATE t_comment set delete_flag = 0 WHERE id = #{id}</script>")
+    @Update("<script>UPDATE t_comment set delete_flag = 1 WHERE id = #{id}</script>")
     void updateStatus(@Param("id") String id);
 
 }
