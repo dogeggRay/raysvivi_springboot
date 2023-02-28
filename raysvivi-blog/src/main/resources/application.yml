@@ -4,7 +4,11 @@ server:
 spring:
   application:
     name: raysvivi-blog
-
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
   datasource:
     #配置hikari连接池
     hikari:
