@@ -55,7 +55,6 @@ public class OssService{
             // 抛出自定义异常
             throw new Exception("图片上传失败");
         }finally{
-            log.error("upload file failed");
             // 关闭OSSClient。
             if(ossClient!=null){
                 ossClient.shutdown();

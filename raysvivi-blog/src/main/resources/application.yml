@@ -35,6 +35,20 @@ mybatis-plus:
   executor-type: simple
   mapper-location: mapper/*.xml
 
+jedis:
+  pool:
+    host: 47.122.19.56
+    port: 6379
+    password: Ray/1990
+    timeout: 7200
+    ssl: false
+    config:
+      maxIdle: 100
+      maxTotal: 1000
+      minIdle: 50
+      maxWaitMillis: 1000
+      testOnBorrow: true
+
 aliyun:
   oss:
     endpoint: oss-cn-hangzhou.aliyuncs.com

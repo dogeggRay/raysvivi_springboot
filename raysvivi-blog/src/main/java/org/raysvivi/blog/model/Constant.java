@@ -8,4 +8,8 @@ public interface Constant {
 
         public static final String NONE_RELATIVE_ID = "-1";
     }
+
+    class RedisKey {
+        public static final String FOOT_STEP_RECORD = "foot_step_record";
+    }
 }

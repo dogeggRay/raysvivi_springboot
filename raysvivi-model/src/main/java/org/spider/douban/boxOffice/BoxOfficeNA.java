@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Data
-@TableName(value="T_box_office_north_american",autoResultMap = true)
+@TableName(value="t_box_office_north_american",autoResultMap = true)
 public class BoxOfficeNA extends SpiderData {
       @TableField(value = "value" ,typeHandler = JsonValueHandler.class)
       private List<BoxOfficeNABody> value;

@@ -14,6 +14,7 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
     @PostMapping("/getArtclePageList")
     public ResponseData<?> getArtclePageList(@RequestBody PageParam pageParam){
         return ResponseUtil.ok(articleService.getBlogsWithPage(pageParam));
