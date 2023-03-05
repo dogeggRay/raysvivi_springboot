@@ -9,7 +9,9 @@ public interface Constant {
         public static final String NONE_RELATIVE_ID = "-1";
     }
 
-    class RedisKey {
+    class RedisConstant {
         public static final String FOOT_STEP_RECORD = "foot_step_record";
+
+        public static final Integer FOOTSTEP_DURATION = 24*60*60;
     }
 }
