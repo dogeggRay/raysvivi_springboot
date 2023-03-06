@@ -12,6 +12,10 @@ public interface Constant {
     class RedisConstant {
         public static final String FOOT_STEP_RECORD = "foot_step_record";
 
+        public static final String PAGE_VIEW_NUMBER = "page_view_number";
+
         public static final Integer FOOTSTEP_DURATION = 24*60*60;
+
+        public static final Integer PAGE_EXTENTION_DURATION = 30*60;
     }
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 
 @Data
 public class BaseDbEntity {
+
     @TableId(value = "id", type = IdType.ASSIGN_UUID)
     private String id;
 

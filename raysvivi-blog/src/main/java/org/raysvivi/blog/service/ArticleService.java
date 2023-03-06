@@ -24,7 +24,7 @@ public class ArticleService {
         return articleMapper.getArticlePageList(pageParam,null);
     }
 
-    public AritcleInfo getBlogDetail(AritcleInfo aritcleInfo){
-        return articleMapper.selectById(aritcleInfo.getId());
+    public AritcleInfo getBlogDetail(String aritcleInfoId){
+        return articleMapper.selectById(aritcleInfoId);
     }
 }

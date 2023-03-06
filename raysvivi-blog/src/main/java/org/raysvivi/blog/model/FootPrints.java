@@ -7,7 +7,7 @@ import org.spider.model.BaseDbEntity;
 
 @Data
 @TableName("t_pv")
-public class FootPrints extends BaseDbEntity {
+public class FootPrints {
 
     @TableField(value = "f_module_name")
     private String moduleName;

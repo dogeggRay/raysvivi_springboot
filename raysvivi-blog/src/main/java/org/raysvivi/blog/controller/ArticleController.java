@@ -20,9 +20,9 @@ public class ArticleController {
         return ResponseUtil.ok(articleService.getBlogsWithPage(pageParam));
     }
 
-    @PostMapping("/blogDetail")
-    public ResponseData<?> blogDetail(@RequestBody AritcleInfo blogInfo) {
-        return ResponseUtil.ok(articleService.getBlogDetail(blogInfo));
+    @GetMapping("/blogDetail")
+    public ResponseData<?> blogDetail(@RequestParam("aritcleInfoId") String aritcleInfoId) {
+        return ResponseUtil.ok(articleService.getBlogDetail(aritcleInfoId));
     }
 
 }

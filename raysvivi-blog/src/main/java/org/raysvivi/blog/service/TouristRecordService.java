@@ -1,8 +1,11 @@
 package org.raysvivi.blog.service;
 
 import com.alibaba.fastjson2.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.raysvivi.blog.dao.PVinfoMapper;
+import org.raysvivi.blog.model.CharacteristicData;
 import org.raysvivi.blog.model.Constant;
 import org.raysvivi.blog.model.FootPrints;
 import org.raysvivi.blog.utils.JedisUtil;
@@ -33,6 +36,22 @@ public class TouristRecordService {
         jedisUtil.sadd(redisKey, clientIp);
         jedisUtil.expire(redisKey,Constant.RedisConstant.FOOTSTEP_DURATION);
 
-        pVinfoMapper.insert(footPrints);
+        pVinfoMapper.numberIncrease(footPrints.getModuleName(),footPrints.getRelativeId());
+    }
+
+    public CharacteristicData pageExtendInfo(String moduleName, String relativeId){
+        String resultNum = jedisUtil.hget(Constant.RedisConstant.PAGE_VIEW_NUMBER,moduleName+ "--" + relativeId);
+        if(StringUtils.isNotEmpty(resultNum)){
+            return new CharacteristicData(Integer.valueOf(resultNum));
+        }
+
+        FootPrints footPrints = pVinfoMapper.selectOne(new QueryWrapper<FootPrints>().eq("f_module_name",moduleName).eq("f_relative_id",relativeId));
+        if(footPrints==null){
+            return new CharacteristicData(0);
+        }
+        jedisUtil.hset(Constant.RedisConstant.PAGE_VIEW_NUMBER,moduleName+ "--" + relativeId,footPrints.getNumber()+"");
+        jedisUtil.expire(Constant.RedisConstant.PAGE_VIEW_NUMBER,Constant.RedisConstant.PAGE_EXTENTION_DURATION);
+
+        return new CharacteristicData(footPrints.getNumber());
     }
 }
