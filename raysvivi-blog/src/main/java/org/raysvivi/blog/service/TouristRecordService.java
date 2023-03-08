@@ -1,12 +1,11 @@
 package org.raysvivi.blog.service;
 
-import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.raysvivi.blog.dao.PVinfoMapper;
 import org.raysvivi.blog.model.CharacteristicData;
-import org.raysvivi.blog.model.Constant;
+import org.raysvivi.blog.constant.Constant;
 import org.raysvivi.blog.model.FootPrints;
 import org.raysvivi.blog.utils.JedisUtil;
 import org.spider.common.util.HttpUtil;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.UUID;
 
 @Slf4j
 @Service

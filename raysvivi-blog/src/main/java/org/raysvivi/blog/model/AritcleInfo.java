@@ -1,15 +1,16 @@
 package org.raysvivi.blog.model;
 
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.raysvivi.blog.handler.StrsTypeHandler;
 import org.spider.model.BaseDbEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
-@TableName("t_article")
+@TableName(value="t_article", autoResultMap = true)
 public class AritcleInfo extends BaseDbEntity implements Serializable, Comparable<AritcleInfo> {
 
     @TableField(value = "f_title")
@@ -24,8 +25,8 @@ public class AritcleInfo extends BaseDbEntity implements Serializable, Comparabl
     @TableField(value = "f_module")
     private String module;
 
-    @TableField(value = "f_tags")
-    private String tags;
+    @TableField(value = "f_tags",typeHandler = StrsTypeHandler.class)
+    private List<String> tags;
 
     @TableField(value = "f_image")
     private String image;

@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 静态资源文件
                 .antMatchers("/*.ico", "/css/**", "/images/**", "/js/**", "/plugins/**", "/library/**", "/themes/**",
                         "/uploads/**").permitAll()
-                .antMatchers("/api/tourist/**").permitAll()
+                .antMatchers("/api/tourist/**","/api/constants/**").permitAll()
                 .and()
                 // 跨域支持
                 .cors()

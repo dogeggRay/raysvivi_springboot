@@ -34,7 +34,7 @@ spring:
 mybatis-plus:
   executor-type: simple
   mapper-location: mapper/*.xml
-
+  type-handlers-package: org.raysvivi.blog.handler
 jedis:
   pool:
     host: 47.122.19.56

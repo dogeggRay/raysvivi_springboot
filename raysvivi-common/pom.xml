@@ -65,12 +65,6 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>2.0.12</version>
-        </dependency>
-
 <!--        阿里云OSS个人图床-->
         <dependency>
             <groupId>com.aliyun.oss</groupId>

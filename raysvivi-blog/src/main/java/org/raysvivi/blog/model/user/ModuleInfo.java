@@ -9,10 +9,6 @@ import lombok.Data;
 @Data
 @TableName("t_module")
 public class ModuleInfo {
-
-    @TableId(value = "id", type = IdType.ASSIGN_UUID)
-    private String id;
-
     @TableField(value = "f_name")
     private String name;
 

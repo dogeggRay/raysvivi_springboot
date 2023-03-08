@@ -1,4 +1,4 @@
-package org.raysvivi.blog.model;
+package org.raysvivi.blog.constant;
 
 public interface Constant {
     class Common {

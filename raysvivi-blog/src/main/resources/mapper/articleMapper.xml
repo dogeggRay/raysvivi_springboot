@@ -12,7 +12,7 @@
         <result property="module" column="f_module"/>
         <result property="image" column="f_image"/>
         <result property="abstractInfo" column="f_abstract"/>
-        <result property="tags" column="f_tags"/>
+        <result property="tags" column="f_tags" typeHandler="org.raysvivi.blog.handler.StrsTypeHandler"/>
         <result property="viewNum" column="f_view_num"/>
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
