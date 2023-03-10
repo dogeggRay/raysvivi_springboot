@@ -17,4 +17,9 @@ public class MineController {
     public ResponseData<?> getArtclePageList(){
         return ResponseUtil.ok(commonService.getTagEnums());
     }
+
+    @GetMapping("/getBloggerParameters")
+    public ResponseData<?> getBloggerInfo(){
+        return ResponseUtil.ok(commonService.getBloggerInfo());
+    }
 }

@@ -34,7 +34,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         } else {
             token = null;
         }
-        if(request.getRequestURI().contains("/tourist")){
+        if(request.getRequestURI().contains("/tourist")||request.getRequestURI().contains("/constants")){
             filterChain.doFilter(request, response);
             return;
         }

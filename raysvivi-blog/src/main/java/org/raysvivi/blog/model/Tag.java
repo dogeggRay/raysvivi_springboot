@@ -25,4 +25,13 @@ public class Tag {
 
     @TableField(value = "f_related")
     private Boolean relatived;
+
+    public Tag(String moduleName,String relativeId,String value,Boolean relatived){
+        this.moduleName = moduleName;
+        this.value = value;
+        this.relativeId = relativeId;
+        this.relatived = relatived;
+    }
+
+    public Tag(){}
 }
