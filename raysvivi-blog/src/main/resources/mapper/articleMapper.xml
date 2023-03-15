@@ -23,10 +23,14 @@
         select id,f_title,f_abstract,f_image,f_module,f_tags,f_view_num,create_time,update_time,delete_flag
         from  t_article
         where 1=1
+        <if test="pageParam!=null and pageParam.tag!=null and pageParam.tag != ''">
+            and f_tags like concat('%',#{pageParam.tag,jdbcType=VARCHAR},'%')
+        </if>
         order by create_time desc
         <if test="pageParam!=null">
             limit ${pageParam.startIndex},${pageParam.pageSize}
         </if>
+
 <!--        <if test="startIndex!=null and startIndex!=''">-->
 <!--            and u.name like  concat('%',#{param.queryName,jdbcType=VARCHAR},'%')-->
 <!--        </if>-->

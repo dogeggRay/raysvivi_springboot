@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.raysvivi.blog.dao.ArticleMapper;
 import org.raysvivi.blog.dao.TagMapper;
 import org.raysvivi.blog.model.AritcleInfo;
+import org.raysvivi.blog.model.AritcleQuery;
 import org.raysvivi.blog.model.Tag;
 import org.spider.model.page.PageParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +62,7 @@ public class ArticleService {
         return result;
     }
 
-    public List<AritcleInfo> getBlogsWithPage(PageParam pageParam){
+    public List<AritcleInfo> getBlogsWithPage(AritcleQuery pageParam){
         log.info("getBlogsWithPage access");
         return articleMapper.getArticlePageList(pageParam,null);
     }
