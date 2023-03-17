@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("api/admin")
+@RequestMapping("api/admin/login")
 public class AdminLoginController {
 
     @Autowired
