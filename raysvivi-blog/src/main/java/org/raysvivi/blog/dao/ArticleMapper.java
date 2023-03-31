@@ -12,5 +12,8 @@ import java.util.List;
 @DS(value = "readDB")
 @Mapper
 public interface ArticleMapper extends BaseMapper<AritcleInfo> {
+
     List<AritcleInfo> getArticlePageList(@Param("pageParam") PageParam pageParam, @Param("condition") AritcleInfo condition);
+
+    List<AritcleInfo> getBlogsSimpleList();
 }

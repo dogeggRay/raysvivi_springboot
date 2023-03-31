@@ -24,9 +24,4 @@ public class ArticleController {
         return ResponseUtil.ok(articleService.getBlogDetail(aritcleInfoId));
     }
 
-    @GetMapping("/blogDetail")
-    public ResponseData<?> blogDetail(@RequestParam("aritcleInfoId") String aritcleInfoId) {
-        return ResponseUtil.ok(articleService.getBlogDetail(aritcleInfoId));
-    }
-
 }

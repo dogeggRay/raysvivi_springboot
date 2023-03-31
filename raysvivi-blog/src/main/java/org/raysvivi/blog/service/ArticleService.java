@@ -70,4 +70,8 @@ public class ArticleService {
     public AritcleInfo getBlogDetail(String aritcleInfoId){
         return articleMapper.selectById(aritcleInfoId);
     }
+
+    public List<AritcleInfo> getBlogsSimpleList(){
+        return articleMapper.getBlogsSimpleList();
+    }
 }
