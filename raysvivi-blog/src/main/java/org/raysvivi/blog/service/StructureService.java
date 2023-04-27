@@ -3,6 +3,7 @@ package org.raysvivi.blog.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.raysvivi.blog.dao.StructureMapper;
 import org.raysvivi.blog.model.structure.StructureInfo;
+import org.spider.model.CommonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -16,8 +17,8 @@ public class StructureService {
     @Autowired
     private StructureMapper structureMapper;
 
-    public StructureInfo queryOne(String name){
-        return structureMapper.selectOne(new QueryWrapper<StructureInfo>().eq("f_name",name));
+    public StructureInfo queryOne(String id){
+        return structureMapper.selectOne(new QueryWrapper<StructureInfo>().eq("id",id));
     }
 
     public void addOne(StructureInfo structureInfo){
@@ -28,11 +29,7 @@ public class StructureService {
         structureMapper.updateById(structureInfo);
     }
 
-    public List<String> queryNameList(){
-        List<StructureInfo> infosInDB = structureMapper.selectList(new QueryWrapper<StructureInfo>());
-        if(CollectionUtils.isEmpty(infosInDB)){
-            return null;
-        }
-        return infosInDB.stream().map(StructureInfo::getName).collect(Collectors.toList());
+    public List<CommonNode> queryNameList(){
+        return structureMapper.getAllList();
     }
 }

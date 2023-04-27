@@ -19,7 +19,7 @@ public class StructureController {
     }
 
     @GetMapping("/queryOne")
-    public ResponseData<?> queryOne(@RequestParam("name") String name) {
-        return ResponseUtil.ok(structureService.queryOne(name));
+    public ResponseData<?> queryOne(@RequestParam("id") String id) {
+        return ResponseUtil.ok(structureService.queryOne(id));
     }
 }
