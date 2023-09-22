@@ -22,7 +22,7 @@ public class AdminAricleController {
     }
 
     @GetMapping("/blogsSimpleList")
-    public ResponseData<?> blogsSimpleList() {
-        return ResponseUtil.ok(articleService.getBlogsSimpleList());
+    public ResponseData<?> blogsSimpleList(@RequestParam String tag) {
+        return ResponseUtil.ok(articleService.getBlogsSimpleList(tag));
     }
 }

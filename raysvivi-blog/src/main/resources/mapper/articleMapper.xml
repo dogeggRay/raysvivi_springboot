@@ -11,6 +11,7 @@
         <result property="content" column="f_content"/>
         <result property="module" column="f_module"/>
         <result property="image" column="f_image"/>
+        <result property="show" column="f_show"/>
         <result property="abstractInfo" column="f_abstract"/>
         <result property="tags" column="f_tags" typeHandler="org.raysvivi.blog.handler.StrsTypeHandler"/>
         <result property="viewNum" column="f_view_num"/>
@@ -22,7 +23,7 @@
     <select id="getArticlePageList"  resultMap="articleInfoMap">
         select id,f_title,f_abstract,f_image,f_module,f_tags,f_view_num,create_time,update_time,delete_flag
         from  t_article
-        where 1=1
+        where 1=1 and f_show = 1
         <if test="pageParam!=null and pageParam.tag!=null and pageParam.tag != ''">
             and f_tags like concat('%',#{pageParam.tag,jdbcType=VARCHAR},'%')
         </if>
@@ -40,5 +41,8 @@
         select id,f_title
         from  t_article
         where delete_flag = 0
+        <if test="tag!=null and tag!=''">
+            and f_tags like concat('%',#{tag,jdbcType=VARCHAR},'%')
+        </if>
     </select>
 </mapper>

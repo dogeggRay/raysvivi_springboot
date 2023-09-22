@@ -6,21 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="raysvivi-model" />
+        <module name="raysvivi-blog" />
         <module name="spider-douban" />
         <module name="raysvivi-DB" />
         <module name="raysvivi-common" />
         <module name="raysvivi-web" />
-        <module name="raysvivi-model" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="douban" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="douban" options="-parameters" />
       <module name="raysvivi-DB" options="-parameters" />
+      <module name="raysvivi-blog" options="-parameters" />
       <module name="raysvivi-common" options="-parameters" />
       <module name="raysvivi-model" options="-parameters" />
-      <module name="raysvivi-web" options="-parameters" />
-      <module name="spider-douban" options="-parameters" />
     </option>
   </component>
 </project>

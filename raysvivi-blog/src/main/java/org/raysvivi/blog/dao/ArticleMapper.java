@@ -15,5 +15,5 @@ public interface ArticleMapper extends BaseMapper<AritcleInfo> {
 
     List<AritcleInfo> getArticlePageList(@Param("pageParam") PageParam pageParam, @Param("condition") AritcleInfo condition);
 
-    List<AritcleInfo> getBlogsSimpleList();
+    List<AritcleInfo> getBlogsSimpleList(@Param("tag") String tag);
 }

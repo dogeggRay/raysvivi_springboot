@@ -8,7 +8,6 @@ import org.raysvivi.blog.dao.TagMapper;
 import org.raysvivi.blog.model.AritcleInfo;
 import org.raysvivi.blog.model.AritcleQuery;
 import org.raysvivi.blog.model.Tag;
-import org.spider.model.page.PageParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -63,7 +62,6 @@ public class ArticleService {
     }
 
     public List<AritcleInfo> getBlogsWithPage(AritcleQuery pageParam){
-        log.info("getBlogsWithPage access");
         return articleMapper.getArticlePageList(pageParam,null);
     }
 
@@ -71,7 +69,7 @@ public class ArticleService {
         return articleMapper.selectById(aritcleInfoId);
     }
 
-    public List<AritcleInfo> getBlogsSimpleList(){
-        return articleMapper.getBlogsSimpleList();
+    public List<AritcleInfo> getBlogsSimpleList(String tag){
+        return articleMapper.getBlogsSimpleList(tag);
     }
 }

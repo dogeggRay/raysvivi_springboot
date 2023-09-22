@@ -31,6 +31,9 @@ public class AritcleInfo extends BaseDbEntity implements Serializable, Comparabl
     @TableField(value = "f_image")
     private String image;
 
+    @TableField(value = "f_show")
+    private Integer show;
+
     @TableField(value = "f_view_num")
     private int viewNum;
 
