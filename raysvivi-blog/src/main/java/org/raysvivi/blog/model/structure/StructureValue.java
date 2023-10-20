@@ -7,14 +7,13 @@ import java.util.List;
 
 @Data
 public class StructureValue {
-    @JsonProperty("id")
-    private String id;
+    @JsonProperty("name")
+    private String name;
 
-    @JsonProperty("label")
-    private String label;
+    @JsonProperty("value")
+    private String value;
 
     @JsonProperty("children")
     private List<StructureValue> children;
 
-    private String pid;
 }

@@ -32,7 +32,7 @@ public class OssService{
 
     public String uploadImage(MultipartFile file,String fileDir) throws Exception {
         OSS ossClient = null;
-        log.info("start uploading image");
+        log.info("start uploading");
         try {
             // 创建OSSClient实例。
             ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);

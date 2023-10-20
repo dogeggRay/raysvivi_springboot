@@ -17,10 +17,24 @@ public class FileController {
     @Autowired
     private OssService ossService;
 
-    @PostMapping("/uploadFile")
-    public ResponseData<?> uploadFile(@RequestBody MultipartFile file) throws Exception {
+    @PostMapping("/uploadImgFile")
+    public ResponseData<?> uploadImgFile(@RequestBody MultipartFile file) throws Exception {
         //无法autowired
         String path = ossService.uploadImage(file,"myblog");
+        return ResponseUtil.ok(path);
+    }
+
+    @PostMapping("/uploadVideo")
+    public ResponseData<?> uploadVideo(@RequestBody MultipartFile file) throws Exception {
+        //无法autowired
+        String path = ossService.uploadImage(file,"video");
+        return ResponseUtil.ok(path);
+    }
+
+    @PostMapping("/uploadAnnex")
+    public ResponseData<?> uploadAnnex(@RequestBody MultipartFile file) throws Exception {
+        //无法autowired
+        String path = ossService.uploadImage(file,"annex");
         return ResponseUtil.ok(path);
     }
 }
