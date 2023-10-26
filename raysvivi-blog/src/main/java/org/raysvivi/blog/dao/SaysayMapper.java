@@ -10,6 +10,6 @@ import org.raysvivi.blog.model.user.SaysayInfo;
 @Mapper
 public interface SaysayMapper extends BaseMapper<SaysayInfo> {
 
-    @Select("select id,f_content content,f_context context,f_link link,f_meme meme,create_time createTime from t_saysay order by id desc limit 1;")
+    @Select("select id,f_content content,f_context context,f_link link,f_meme meme,f_picture picture,create_time createTime from t_saysay order by id desc limit 1;")
     SaysayInfo getLastSaysay();
 }

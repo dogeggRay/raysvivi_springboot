@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import org.spider.model.BaseDbEntity;
 
+import java.util.List;
+
 @Data
 @TableName(value="t_saysay", autoResultMap = true)
 public class SaysayInfo extends BaseDbEntity {
@@ -24,4 +26,10 @@ public class SaysayInfo extends BaseDbEntity {
 
     @TableField(value = "f_meme")
     private String meme;
+
+    @TableField(value = "f_picture")
+    private String picture;
+
+    @TableField(exist = false)
+    private List<CommentInfo> comments;
 }

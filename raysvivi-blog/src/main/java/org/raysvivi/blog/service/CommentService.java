@@ -7,9 +7,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.raysvivi.blog.dao.CommentMapper;
 import org.raysvivi.blog.constant.Constant;
 import org.raysvivi.blog.model.user.CommentInfo;
+import org.spider.common.util.HttpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -21,7 +23,10 @@ public class CommentService {
     @Autowired
     private CommentMapper commentMapper;
 
-    public void add(CommentInfo commentInfo){
+    public void add(HttpServletRequest request,CommentInfo commentInfo){
+        if(StringUtils.isEmpty(commentInfo.getWriterName())){
+            commentInfo.setWriterName(HttpUtil.getClientIp(request));
+        }
         commentMapper.insert(commentInfo);
     }
 
@@ -43,6 +48,9 @@ public class CommentService {
         return buildCommentTree(comments);
     }
 
+    public List<CommentInfo> getConditionList(String moduleId,List<String> relativeIds){
+        return commentMapper.getConditionList(moduleId,relativeIds);
+    }
     private List<CommentInfo> buildCommentTree(List<CommentInfo> comments){
         if(CollectionUtils.isEmpty(comments)){
             return null;
