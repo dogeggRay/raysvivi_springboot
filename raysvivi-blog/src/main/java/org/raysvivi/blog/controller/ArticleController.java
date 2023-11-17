@@ -1,5 +1,6 @@
 package org.raysvivi.blog.controller;
 
+import org.raysvivi.blog.aspect.annotation.BlogDetailAnno;
 import org.raysvivi.blog.model.AritcleQuery;
 import org.raysvivi.blog.service.ArticleService;
 import org.spider.common.util.ResponseData;
@@ -19,6 +20,8 @@ public class ArticleController {
         return ResponseUtil.ok(articleService.getBlogsWithPage(pageParam));
     }
 
+
+    @BlogDetailAnno(relativeId = "#aritcleInfoId")
     @GetMapping("/blogDetail")
     public ResponseData<?> blogDetail(@RequestParam("aritcleInfoId") String aritcleInfoId) {
         return ResponseUtil.ok(articleService.getBlogDetail(aritcleInfoId));

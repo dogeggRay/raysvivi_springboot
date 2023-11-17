@@ -6,4 +6,6 @@ import org.spider.model.page.PageParam;
 @Data
 public class AritcleQuery extends PageParam {
     private String tag;
+
+    private String keyword;
 }

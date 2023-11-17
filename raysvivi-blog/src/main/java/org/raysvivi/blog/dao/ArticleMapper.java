@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface ArticleMapper extends BaseMapper<AritcleInfo> {
 
-    List<AritcleInfo> getArticlePageList(@Param("pageParam") PageParam pageParam, @Param("condition") AritcleInfo condition);
+    List<AritcleInfo> getArticlePageList(@Param("pageParam") PageParam pageParam, @Param("condition") AritcleInfo condition,@Param("keyword") String keyword);
 
     List<AritcleInfo> getBlogsSimpleList(@Param("tag") String tag);
 }

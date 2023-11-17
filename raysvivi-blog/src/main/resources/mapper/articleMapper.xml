@@ -27,6 +27,9 @@
         <if test="pageParam!=null and pageParam.tag!=null and pageParam.tag != ''">
             and f_tags like concat('%',#{pageParam.tag,jdbcType=VARCHAR},'%')
         </if>
+        <if test="keyword!=null and keyword != ''">
+            and f_title like concat('%',#{keyword,jdbcType=VARCHAR},'%')
+        </if>
         order by create_time desc
         <if test="pageParam!=null">
             limit ${pageParam.startIndex},${pageParam.pageSize}

@@ -62,7 +62,7 @@ public class ArticleService {
     }
 
     public List<AritcleInfo> getBlogsWithPage(AritcleQuery pageParam){
-        return articleMapper.getArticlePageList(pageParam,null);
+        return articleMapper.getArticlePageList(pageParam,null,pageParam.getKeyword());
     }
 
     public AritcleInfo getBlogDetail(String aritcleInfoId){
